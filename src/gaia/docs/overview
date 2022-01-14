@@ -1,0 +1,15 @@
+The files in this project are associated with getting data from the Gaia EDR3 Nearby Stars Catalog
+into a format that we can use for the local Galactic neighborhood.
+
+There are two issues that need to be addressed.  First, while the catalog uses DR3 identifiers, other sources,
+SIMBAD and the NASA Exoplanet archive only have DR2 identifiers, so we need to be able to translate between
+the two.
+
+Second, the GAIA archive is incomplete for very bright stars, so we need to include additional bright stars from
+the Hipparcos data that we have already extracted.
+
+The packages/programs included here are:
+
+   readcsv.CSVReader:  Read a CSV version of the Nearby Stars Catalog and render it in a JSON
+like format extracting only columns of interest and renaming them.
+

@@ -1,0 +1,3 @@
+Process is:[object process]
+argv:/usr/local/bin/node,/mnt/d/programs/NetBeansProjects/Orb/src/missionfinder/main.js,-20,1967-12-25,1989-01-01
+Horizon command is:java -jar ../../../HorizonsQuery/dist/HorizonsQuery.jar -20 1967-12-25 1989-01-01

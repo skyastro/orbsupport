@@ -1,0 +1,138 @@
+The files in this package are associated with getting data from the Gaia EDR3 Nearby Stars Catalog
+into a format that we can use for the local Galactic neighborhood.  We want to include not just the EDR3
+information, but also mark stars which have known planets and fill in gaps in the EDR3.
+
+There are a few issues that need to be addressed.  First, while the catalog uses DR3 identifiers, other sources,
+SIMBAD and the NASA Exoplanet archive only have DR2 identifiers, so we need to be able to translate between
+the two. Second, the EDR3 does not include very bright stars, so these need to be extracted from SIMBAD.
+We ultimately merge the following sources of information:  the EDR3 nearby stars catalog, a translation between
+DR2 and DR3 GAIA IDs, nearby stars as seen in SIMBAD and nearby stars with detected planets as
+collated by the NASA Exoplanet Archive.
+
+1. Translating DR2 ids to DR3:
+
+The files in 
+   /mnt/f/gaia/edr3/cdn.gea.esac.esa.int/Gaia/gedr3/auxiliary/dr2_neighbourhood
+give the nearby associations for DR2 and DR2 stars and were downloaded from the EDR3
+release. These were uncompressed (using gunzip) and placed in 
+    /mnt/c/users/tom/gaia/dr2n
+Note that each one of these files is a randomized sample of the entire sky.  To
+get all of the data in a given region we need to go over all of them.
+Each of these files was sorted (using sort) and placed in a file in the same directory with 
+an 's' appended to each file name (i.e., ending in *s.csv).
+
+The *s.csv files were sorted into a set of files where each file had a contiguous range of dr2 ids, these
+files were stored as
+     /mnt/d/gaia/sort*
+with sequential numbers appended as we went over the full range of DR2 ids.  I.e., we have a list of
+the cross-ids for ~2 billion Gaia objects in DR2 id order.
+
+The GAIA DR2 source catalog was downloaded from a GAIA site into 
+     /mnt/f/gaia/gdr2/
+
+We used the EDR3-DR2 cross match table and this_source catalog of the DR2 to find for each DR2 ID
+the corresponding DR3 entry.  Essentially we created two tables, one of DR2 entries with no corresponding DR3
+entry, and a table of DR2 entries which changed in the DR3.  All other DR2 entries 
+are assumed to have the same ID in the DR3.  The main program of the class gaia.readsrc.Comparer
+does this merging and file creation.  We have two datasets in DR2 ID order, the sort* files and the DR2 
+files.  The FileLooper class runs through the DR2 data, while the SplitReader class runs through the sort*
+cross-id files.
+
+In running the readsrc program we had a power glitch about 2/3rds of the way through.
+We put in the code to handle restarts (could imagine this may cause error for one id).
+The fixed program failed at the end probably because of bug in the getNextID() call where
+we didn't check for nulls.
+
+Final results in crossMiss.dat and deltas.dat.
+
+Stats (may have some duplication, but probably not...)
+
+Log:  967802391   28369624   2149292   0   214032788   0   20404130   6884771   4773201   872772   43796   367234
+Log2: 343845095   10359612    982419   0    88025510   0    8674168   2935285   1350576   274338    9053   143943
+Log3:     18923        487       233   0         462   0         42        19         8        0       0        0
+
+
+2. The EDR3 Nearby Stars catalog.
+
+These EDR3 nearby stars catalog data were extracted from the German GAIA site but had to be downloaded in two pieces.
+These were downloaded as 
+    /mnt/f/gaia/gnsc/table[1/2].csv
+Table 1 has all rows with Galactic longitudes 0-90 and 270-360
+Table 2 has all rows with Galactic longitudes 90-270
+[This may have been done as a cone query centered at the 0,0 and 180,0 with a radius of 90 deg.]
+The data in these two files was concatenated to create gnsc.data and this was then sorted by
+the DR3 id into gnsc.srt.  The header was reattached to give gnsc.srt.csv.
+There are 331,312 entries in this table.  This file is one of the inputs to the
+gaia.generate.GenerateGalaxy class.
+
+3. Simbad data
+ 
+The simbad.nearby.csv file was created by doing a SIMBAD query requesting all data from the
+basic catalog in a join with all IDs from the ident catalog.  We actually wanted only DR2 ids
+and those objects which had no dr2 id, but attempts to get this directly using an outer join
+did not work as hoped.  So we got every id for the nearby (parallax > 9 mas) objects and then
+processed these to get only the DR2 ID or a null.  We then used the SIMBAD OID column
+to get the Hipparcos IDs for any column which did not have a DR2 ID.
+
+
+
+
+
+    The files in 
+       /mnt/f/gaia/edr3/cdn.gea.esac.esa.int/Gaia/gedr3/auxiliary/dr2_neighbourhood
+    give the nearby associations for DR2 and DR2 stars.  These were
+    uncompressed (using gunzip) and placed in 
+        /mnt/c/users/tom/gaia/dr2n
+    Note that each one of these files is a randomized sample of the entire sky.  To
+    get all of the data in a given region we need to go over all of them.
+    Each of these files was sorted (using sort) and placed in a file in the same directory with an 's' appended to each file name (i.e., ending in *s.csv).
+
+    The *s.csv files were sorted into a set of files where each file had a contiguous range of dr2 ids, these
+    files are stored in 
+         /mnt/d/gaia/sort*
+    This used the Java code in: 
+         /mnt/d/programs/react/JavaApplication2/src/merge
+
+    These files were then used to get a complete translation of DR2 id's to Dr2 using the program in
+        /mnt/d/programs/react/JavaApplication2/src/readsrc
+    The following note is included there:
+
+    
+    The crossMiss.dat and deltas.dat are the two tables mentioned above, giving the DR2 entries with no DR3 and the
+    changes to DR2 ids.
+        
+
+With this table we could add DR3 ID's to all results in the SIMBAD query which had a DR2 entry.  There
+were three entries where we had a DR2 entry but no DR3 entry.  There were about 3400 total entries with
+no DR2 id available.  
+      
+
+This gets us to the simbad.nearby.csv.  We did some further processing:  Using the OID column we found
+the Hipparcos identifier (where known) for every row where we did not have a GAIA ID.
+Ultimately we noted that many of the columns that did not match this way were planets so we deleted
+every entry where the last character of the name was a lower case letter.
+There was also a distance field in the SIMBAD data.  All objects with a distance > 100 were deleted.
+[Planetary information should be recovered below.]  The end result is the simbad.full.csv where we
+have entered the Hipparcos ID in the GAIA ID column when the Hipparcos ID is known, but there is
+no GAIA ID.  These are easily distinguishable since they have an absolute value < 10^7.  The simbad.full.csv
+is ordered in terms of the GAIA ID column (including those columns which actually have a Hipparcos ID).
+There are about 672 entries with neither Hipparcos nor DR3 IDs, and about 2166 that have no DR3 ID (including
+the 672).  The total number of rows in the simbad.full.csv file is 177,725.
+
+The NASA exoplanet database was queried to find all planetary systems where there was a DR2 or Hipparcos identifier
+associated with the system.  We then saved only a very limited amount of information (notably the number of
+planets in the system) and these identifiers and then looked only at unique rows.  Using the same technique as
+the with the SIMBAD DR2 identiers above, we got the DR3 identifiers for every row with a DR2.  There were only a few
+rows with no DR2 ID and for these we simply copied the Hipparcos ID into the GAIA DR3 ID just as there.
+A total of 3,152 systems with planets were retrieved.
+
+       Looks like the code to do this uses the Jar file from /mnt/d/programs/react/ExoUtils
+
+The Gaia, Simbad and planets data were combined using the code in
+    /mnt/d/programs/react/JavaApplication2/src/generate/GenerateGalaxy.java
+
+Code for the prior Stars JSON file, using the Hipparcos catalog seems to be in
+   /mnt/d/programs/react/XHipReader
+
+
+   

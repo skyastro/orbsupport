@@ -1,0 +1,36 @@
+Process is:[object process]
+argv:/usr/local/bin/node,/mnt/d/programs/NetBeansProjects/Orb/src/missionfinder/main.js,-76,2011-11-28,2012-08-06
+Horizon command is:java -jar ../../../HorizonsQuery/dist/HorizonsQuery.jar -76 2011-11-28 2012-08-06
+Looking at pname, time:Earth 200000000
+Looking at pname, time:Venus 200000000
+Looking at pname, time:Mercury 200000000
+Preliminary analysis gives following periods:
+0 coast 0 126
+ "TBD": {
+ "color": 16776960 ,
+ "horizonsID": -76 ,
+ "orbits":[
+   {
+    "start": 375753600 ,
+    "stop": 386726400 ,
+    "interp": 386553600 ,
+    "sat":{
+      "e": 0.2204928776548811,
+      "a": 188468426689.2938,
+      "per": 44595473.30522557,
+      "t0": 374809456.242821,
+      "rot":[ -0.45585856434818184,0.889678860700303,-0.8900522284171949,-0.4556673363887856,0.02896210232977082,2.973665397011468 ],
+    }
+   },
+   {
+    "start": 386726400 ,
+    "stop": 1000000000000 ,
+    "sat":{
+      "e": 0.2177245406896105,
+      "a": 189174695666.1717,
+      "per": 44846384.47074481,
+      "t0": 374812294.10187584,
+      "rot":[ -0.45834697820759,0.8884001131895,-0.8887733386910135,-0.45815450305857097,0.028977408649454754,2.9904952697442346 ],
+    }
+   }
+ ]

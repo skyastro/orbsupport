@@ -1,0 +1,12 @@
+In running the readsrc program we had a power glitch about 2/3rds of the way through.
+We put in the code to handle restarts (could imagine this may cause error for one id).
+The fixed program failed at the end probably because of bug in the getNextID() call where
+we didn't check for nulls.
+
+Final results in crossMiss.dat and deltas.dat.
+
+Stats (may have some duplication, but probably not...)
+ 
+Log:  967802391   28369624   2149292   0   214032788   0   20404130   6884771   4773201   872772   43796   367234
+Log2: 343845095   10359612    982419   0    88025510   0    8674168   2935285   1350576   274338    9053   143943
+Log3:     18923        487       233   0         462   0         42        19         8        0       0        0

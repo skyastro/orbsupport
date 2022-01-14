@@ -1,0 +1,274 @@
+Center body name: Solar System Barycenter (0)     {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2000-Jan-01 00:00:00.0000 TDB
+Stop  time      : A.D. 2000-Jan-02 00:00:00.0000 TDB
+Step-size       : 2880 minutes
+*******************************************************************************
+Center geodetic : 0.00000000,0.00000000,0.0000000 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.00000000,0.00000000,0.0000000 {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : (undefined)
+Keplerian GM    : 2.9630927493457475E-04 au^3/d^2
+Small perturbers: Yes                             {source: SB441-N16}
+Output units    : AU-D, deg, Julian Day Number (Tp)
+Output type     : GEOMETRIC osculating elements
+Output format   : 10
+Reference frame : Ecliptic of J2000.0
+*******************************************************************************
+Initial IAU76/J2000 heliocentric ecliptic osculating elements (au, days, deg.):
+  EPOCH=  2457353.5 ! 2015-Nov-27.00 (TDB)         Residual RMS= .24626
+   EC= .1544932530424187   QR= 2.250897867600008   TP= 2456612.9202919132
+   OM= 70.34282119796717   W=  349.7881962849056   IN= 13.6808032427285
+  Equivalent ICRF heliocentric cartesian coordinates (au, au/d):
+   X=-1.892594519358135E+00  Y=-2.297625358354860E+00  Z=-7.376022521104699E-01
+  VX= 6.666972430273445E-03 VY=-4.504106888330518E-03 VZ=-4.134091396802909E-03
+Asteroid physical parameters (km, seconds, rotational period in hours):
+   GM= n.a.                RAD= 4.069              ROTPER= n.a.
+   H= 12.96                G= .150                 B-V= n.a.
+                           ALBEDO= .121            STYP= n.a.
+*******************************************************************************
+JDTDB
+   EC    QR   IN
+   OM    W    Tp
+   N     MA   TA
+   A     AD   PR
+*******************************************************************************
+$$SOE
+2451544.500000000 = A.D. 2000-Jan-01 00:00:00.0000 TDB
+ EC= 1.555906714443290E-01 QR= 2.233238856380111E+00 IN= 1.372432149577838E+01
+ OM= 7.045508495808998E+01 W = 3.508486510213602E+02 Tp=  2451849.447384673171
+ N = 2.293094885447135E-01 MA= 2.900726711875558E+02 TA= 2.724179649166191E+02
+ A = 2.644734941760980E+00 AD= 3.056231027141850E+00 PR= 1.569930674411682E+03
+$$EOE
+*******************************************************************************
+
+TIME
+
+  Barycentric Dynamical Time ("TDB" or T_eph) output was requested. This
+continuous relativistic coordinate time is equivalent to the relativistic
+proper time of a clock at rest in a reference frame comoving with the
+solar system barycenter but outside the system's gravity well. It is the
+independent variable in the solar system relativistic equations of motion.
+
+  TDB runs at a uniform rate of one SI second per second and is independent
+of irregularities in Earth's rotation.
+
+  Calendar dates prior to 1582-Oct-15 are in the Julian calendar system.
+Later calendar dates are in the Gregorian system.
+
+REFERENCE FRAME AND COORDINATES
+
+  Ecliptic at the standard reference epoch
+
+    Reference epoch: J2000.0
+    X-Y plane: adopted Earth orbital plane at the reference epoch
+               Note: IAU76 obliquity of 84381.448 arcseconds wrt ICRF X-Y plane
+    X-axis   : ICRF
+    Z-axis   : perpendicular to the X-Y plane in the directional (+ or -) sense
+               of Earth's north pole at the reference epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      EC     Eccentricity, e
+      QR     Periapsis distance, q (au)
+      IN     Inclination w.r.t X-Y plane, i (degrees)
+      OM     Longitude of Ascending Node, OMEGA, (degrees)
+      W      Argument of Perifocus, w (degrees)
+      Tp     Time of periapsis (Julian Day Number)
+      N      Mean motion, n (degrees/day)
+      MA     Mean anomaly, M (degrees)
+      TA     True anomaly, nu (degrees)
+      A      Semi-major axis, a (au)
+      AD     Apoapsis distance (au)
+      PR     Sidereal orbit period (day)
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric osculating elements have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/hrzn_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Author      : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************
+
+
+l,[R]edisplay, [S]PK,?,<cr>: E
+
+ Observe, Elements, Vectors  [o,e,v,?] : v
+ Use previous center  [ cr=(y), n, ? ] : y
+ Reference plane [eclip, frame, body ] : eclip
+ Starting TDB [>=   1599-Dec-11 00:01] : 2000-01-01
+ Ending   TDB [<=   2501-Jan-01 00:00] : 2000-01-02
+ Output interval [ex: 10m, 1h, 1d, ? ] : 2d
+
+ Current output table defaults --
+   Ref. Frame     = ICRF
+   Corrections    = NONE
+   Units          = AU-D
+   CSV format     = NO
+   Output delta-T = NO
+   Table type     = 3 (position, velocity, LT, range, range-rate)
+   Vector label   = YES
+
+ Accept default output [ cr=(y), n, ?] : y
+
+ Current integration step:
+  2451562.51034  2000 Jan 19.01034    -1.9690449
+ Current integration step:
+  2451544.00049  1999 Dec 31.50049     0.0004883
+*******************************************************************************
+Ephemeris / PORT_LOGIN Thu Oct 28 07:11:56 2021 Pasadena, USA    / Horizons
+*******************************************************************************
+Target body name: 9460 McGlynn (1998 HS30)        {source: JPL#35}
+Center body name: Solar System Barycenter (0)     {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2000-Jan-01 00:00:00.0000 TDB
+Stop  time      : A.D. 2000-Jan-02 00:00:00.0000 TDB
+Step-size       : 2880 minutes
+*******************************************************************************
+Center geodetic : 0.00000000,0.00000000,0.0000000 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.00000000,0.00000000,0.0000000 {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : (undefined)
+Small perturbers: Yes                             {source: SB441-N16}
+Output units    : AU-D
+Output type     : GEOMETRIC cartesian states
+Output format   : 3 (position, velocity, LT, range, range-rate)
+Reference frame : Ecliptic of J2000.0
+*******************************************************************************
+Initial IAU76/J2000 heliocentric ecliptic osculating elements (au, days, deg.):
+  EPOCH=  2457353.5 ! 2015-Nov-27.00 (TDB)         Residual RMS= .24626
+   EC= .1544932530424187   QR= 2.250897867600008   TP= 2456612.9202919132
+   OM= 70.34282119796717   W=  349.7881962849056   IN= 13.6808032427285
+  Equivalent ICRF heliocentric cartesian coordinates (au, au/d):
+   X=-1.892594519358135E+00  Y=-2.297625358354860E+00  Z=-7.376022521104699E-01
+  VX= 6.666972430273445E-03 VY=-4.504106888330518E-03 VZ=-4.134091396802909E-03
+Asteroid physical parameters (km, seconds, rotational period in hours):
+   GM= n.a.                RAD= 4.069              ROTPER= n.a.
+   H= 12.96                G= .150                 B-V= n.a.
+                           ALBEDO= .121            STYP= n.a.
+*******************************************************************************
+JDTDB
+   X     Y     Z
+   VX    VY    VZ
+   LT    RG    RR
+*******************************************************************************
+$$SOE
+2451544.500000000 = A.D. 2000-Jan-01 00:00:00.0000 TDB
+ X = 2.230405022847759E+00 Y =-1.110790089374123E+00 Z =-6.040863228231372E-01
+ VX= 3.292044365251326E-03 VY= 1.040469913882338E-02 VZ= 9.243669195736235E-05
+ LT= 1.480773686276024E-02 RG= 2.563880159839431E+00 RR=-1.665711294492090E-03
+$$EOE
+*******************************************************************************
+
+TIME
+
+  Barycentric Dynamical Time ("TDB" or T_eph) output was requested. This
+continuous relativistic coordinate time is equivalent to the relativistic
+proper time of a clock at rest in a reference frame comoving with the
+solar system barycenter but outside the system's gravity well. It is the
+independent variable in the solar system relativistic equations of motion.
+
+  TDB runs at a uniform rate of one SI second per second and is independent
+of irregularities in Earth's rotation.
+
+  Calendar dates prior to 1582-Oct-15 are in the Julian calendar system.
+Later calendar dates are in the Gregorian system.
+
+REFERENCE FRAME AND COORDINATES
+
+  Ecliptic at the standard reference epoch
+
+    Reference epoch: J2000.0
+    X-Y plane: adopted Earth orbital plane at the reference epoch
+               Note: IAU76 obliquity of 84381.448 arcseconds wrt ICRF X-Y plane
+    X-axis   : ICRF
+    Z-axis   : perpendicular to the X-Y plane in the directional (+ or -) sense
+               of Earth's north pole at the reference epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      X      X-component of position vector (au)
+      Y      Y-component of position vector (au)
+      Z      Z-component of position vector (au)
+      VX     X-component of velocity vector (au/day)
+      VY     Y-component of velocity vector (au/day)
+      VZ     Z-component of velocity vector (au/day)
+      LT     One-way down-leg Newtonian light-time (day)
+      RG     Range; distance from coordinate center (au)
+      RR     Range-rate; radial velocity wrt coord. center (au/day)
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric state vectors have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/hrzn_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Author      : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************
+
+Start time      : A.D. 1956-Mar-03 00:00:00.0000 TDB
+Stop  time      : A.D. 1956-Mar-04 00:00:00.0000 TDB
+Step-size       : 2880 minutes
+*******************************************************************************
+Center geodetic : 0.00000000,0.00000000,0.0000000 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.00000000,0.00000000,0.0000000 {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : (undefined)
+Small perturbers: Yes                             {source: SB441-N16}
+Output units    : AU-D
+Output type     : GEOMETRIC cartesian states
+Output format   : 3 (position, velocity, LT, range, range-rate)
+Reference frame : Ecliptic of J2000.0
+*******************************************************************************
+Initial IAU76/J2000 heliocentric ecliptic osculating elements (au, days, deg.):
+  EPOCH=  2457353.5 ! 2015-Nov-27.00 (TDB)         Residual RMS= .24626
+   EC= .1544932530424187   QR= 2.250897867600008   TP= 2456612.9202919132
+   OM= 70.34282119796717   W=  349.7881962849056   IN= 13.6808032427285
+  Equivalent ICRF heliocentric cartesian coordinates (au, au/d):
+   X=-1.892594519358135E+00  Y=-2.297625358354860E+00  Z=-7.376022521104699E-01
+  VX= 6.666972430273445E-03 VY=-4.504106888330518E-03 VZ=-4.134091396802909E-03
+Asteroid physical parameters (km, seconds, rotational period in hours):
+   GM= n.a.                RAD= 4.069              ROTPER= n.a.
+   H= 12.96                G= .150                 B-V= n.a.
+                           ALBEDO= .121            STYP= n.a.
+*******************************************************************************
+JDTDB
+   X     Y     Z
+   VX    VY    VZ
+   LT    RG    RR
+*******************************************************************************
+$$SOE
+2435535.500000000 = A.D. 1956-Mar-03 00:00:00.0000 TDB
+ X = 1.559700791189361E+00 Y =-2.225138447971239E+00 Z =-5.341168038749972E-01
+ VX= 7.144817060893749E-03 VY= 7.134043085477039E-03 VZ=-1.081945857142575E-03
+ LT= 1.599431595343216E-02 RG= 2.769329960632755E+00 RR=-1.499485916104960E-03
+$$EOE
+*******************************************************************************

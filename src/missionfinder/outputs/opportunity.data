@@ -1,0 +1,43 @@
+Process is:[object process]
+argv:/usr/local/bin/node,/mnt/d/programs/NetBeansProjects/Orb/src/missionfinder/main.js,-253,2003-07-09,2004-01-25
+Horizon command is:java -jar ../../../HorizonsQuery/dist/HorizonsQuery.jar -253 2003-07-09 2004-01-25
+Looking at pname, time:Earth 200000000
+Looking at pname, time:Venus 200000000
+Looking at pname, time:Mercury 200000000
+Preliminary analysis gives following periods:
+0 manuever 0 1
+1 coast 1 99
+2 manuever 99 100
+ "TBD": {
+ "color": 16776960 ,
+ "horizonsID": -253 ,
+ "orbits":[
+   {
+    "start": 111024000 ,
+Got unexpected manuever
+   },
+   {
+    "start": 111024000 ,
+    "stop": 119750400 ,
+    "interp": 119577600 ,
+    "sat":{
+      "e": 0.2066155989930695,
+      "a": 189910836899.0238,
+      "per": 45108407.10721939,
+      "t0": 108920747.36143404,
+      "rot":[ 0.25607936762510947,0.9665792182329713,-0.9666557595528638,0.25605909085894785,0.012583992555112293,5.864136581272891 ],
+    }
+   },
+   {
+    "start": 119750400 ,
+    "stop": 128304000 ,
+    "interp": 128131200 ,
+    "sat":{
+      "e": 0.20473536644072138,
+      "a": 188538547465.895,
+      "per": 44620363.62865306,
+      "t0": 108788593.604733,
+      "rot":[ 0.24986663230028136,0.9682037087174183,-0.9682802621467175,0.24984687753679213,0.01257442686374696,5.842295898614398 ],
+    }
+   }
+ ]

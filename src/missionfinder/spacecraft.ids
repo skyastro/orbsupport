@@ -1,0 +1,99 @@
+
+       -2  Mariner 2 (spacecraft)       Aug 22, 1962        Jan-1-1963  Bound (poor long term orbit)
+      -23  Pioneer 10 (spacecraft)      Mar 2, 1972         1990-01-01  Hyperbolic
+      -24  Pioneer 11 (spacecraft)      Apr 5, 1973         1990-01-01  Hyperbolic
+      -31  Voyager 1 (spacecraft)       Sep 5, 1977         2000-01-01  Hyperbolic
+      -32  Voyager 2 (spacecraft)       Aug 20, 1977        2000-01-01  Hyperbolic
+      -77  Galileo (spacecraft)         1989-10-18          1995-12-7   Jupiter
+      -55  Ulysses (spacecraft)         1990-10-06          2009-06-30  Bound
+      -93  NEAR (spacecraft)            1996-02-17       2000-02-12     Eros
+     -530  Mars Pathfinder (spacecraft) December 4,1996 July 4, 1997    Mars
+            No ephemeris till Feb 4, 1997
+      -82  Cassini (spacecraft)         1997-10-15          2004-7-1    Saturn
+      -30  Deep Space 1 (spacecraft)    Oct-26-1998         2001-Dec-20 Bound
+      -29  Stardust (bus) (spacecraft)  1999-02-07          2011-Mar-13 Bound
+      -53  Mars Odyssey (spacecraft)    March 5, 2001   October 24, 2001 Mars
+      -41  Mars Express (spacecraft)    Jun-2-2003          Dec-20-2003 Mars
+     -254  Spirit (spacecraft)          2003-06-10       2004-01-04     Mars
+     -253  Opportunity (spacecraft)     2003-07-07       2004-01-24     Mars
+      -79  Spitzer Space Telescope      2003-08-05
+                                        2003-08-26          2022-01-01  Bound/Earthlike
+     -226  Rosetta (spacecraft)         2004-03-02       2014-05-30     67P/Churyumov-Gerasimenko
+           // Poor orbit for comet by default so that we don't
+           // match.  May want to update this comet specially to
+           // epoch of encounter.
+     -248  Venus Express (spacecraft)    2005-11-09      2006-04-11   Venus
+           // Bit of a gap at end but very extended orbit may explain a little.
+      -98  New Horizons (spacecraft)    Jan 19, 2006        2022-01-01  Hyperbolic
+     -234  STEREO-A (spacecraft)        2006-10-25          2023-01-01  Bound/Earthlike               AHEAD
+     -235  STEREO-B (spacecraft)        2006-10-25          2023-01-01  Bound/Earthlike
+            // Do we have A and B mixed up?
+      -84  Phoenix (spacecraft)         2007-08-04       2008-05-25     Mars
+           // Added manual termination
+     -203  Dawn (spacecraft)            2007-09-27       2018-11-01     Ceres
+       -5  Planet-C (spacecraft)        20-May 2010          7 Dec 2015 Venus                       VCO Akatsuki
+      -61  Juno (spacecraft)            Aug 5, 2011         2016=07-04  Jupiter
+      -76  Mars Science Laboratory      2011-11-26       2012-08-06     Mars
+           // Manual adjustment since didn't recognize encounter.
+       -3  Mangalyaan                   November 5, 2013, Sept 30, 2004 Mars           Mangalyaan
+     -202  MAVEN (spacecraft)           2013-11-18       2014-10-21     Mars
+     -236  MESSENGER (spacecraft)       Aug 3, 2014         Mar 18,2011 Mercury
+      -37  Hayabusa 2 (spacecraft)      2014-12-02          2023-01-01  Bound            
+     -143  ExoMars16 TGO (spacecraft)   2016-03-14       2016-10-19     Mars
+      -74  Mars Reconnaissance Orbiter  2016-09-08       2017-03-06     Mars
+  -143205  SpaceX Roadster (spacecraft) 2018-02-06          2023-01-01  Bound    
+     -189  InSight (spacecraft)         2018-05-05       2018-11-26     Mars
+      -96  Parker Solar Probe (spacecraft) 2018-08-12       2025-06-01  Bound/Active
+           // Poor fit to orbit.
+      -64  OSIRIS-REx (spacecraft)      2018-09-08       2023-01-01     Bound
+     -121  BepiColombo (Spacecraft)     2018-10-20       2025-12-05     Mercury                   MPO MMO
+     -168  Mars2020 (spacecraft)        2020-06-30       2021-02-18     Mars           Perserverance Ingenu
+           // Crowded orbit with other Mars probles
+ -9901491  Tianwen-1 (spacecraft)       2020-07-23       2021-05-14     Mars
+           // Crowded path
+      -62  EMM (spacecraft)             July 20, 2020    Feb 18, 2021   Mars             Hope Emirates
+           // Crowded path
+      -49  Lucy (spacecraft)            October 16, 2021 Feb 2033       Bound (Trojan asteroids)
+
+
+      -20  Pioneer 8 (spacecraft)       December 13, 1967   
+           // Batch interface only allows ephemeris after 1997.
+       -6  Pioneer 6 (spacecraft)       1966-01-02          1999-12-30  Bound  
+           // Batch interface only allows ephemeris after 1996.  Telnet interface goes back
+           // to 1966.
+     -140  Deep Impact Flyby - EPOXI (spacecr    2005-01-14 2013-07-04 Bound
+           // Horizons returns error that suggests they have
+           // some problem
+     -111  ICE (spacecraft)             1978-08-12       2014-08-10     Bound
+           // No ephemeris prior to 2014, long after launch
+     -130  Hayabusa (spacecraft)        2003-05-09                   Muses-C
+           // No ephemeris prior to 2019
+
+
+  -139479  Gaia (spacecraft)                                            Earth Lagrange 2
+      -12  LADEE (spacecraft)                               Moon
+      -18  LCROSS Shepherd (spacecraft)                     Moon
+   -18900  LCROSS Centaur Impactor (spacecraf               Moon
+      -21  SOHO (spacecraft)                                Earth Lagrange 1
+      -25  Lunar Prospector (LP) (spacecraft)               Moon
+      -39  Ouna (spacecraft)                                Moon
+      -47  Genesis (bus) (spacecraft)                       Mission at L2, but ultimately bound
+            Orbit not interesting at solar perspective, interesting if we do
+            Earth satellites.
+      -85  LRO (spacecraft)                                 Moon
+      -86  Chandrayaan-1 (spacecraft)                       Moon
+     -152  Chandrayaan-2 (ORBITER spacecraft) CH2           Moon
+     -150  Cassini Huygens (spacecraft)                     Saturn/Titan
+  -141043  LISA Pathfinder (spacecraft)                     Earth/Lagrange
+            // Not clear what long term is
+     -177  GRAIL-A (spacecraft)                            Moon
+     -181  GRAIL-B (spacecraft)                            Moon
+     -178  Nozomi (spacecraft)                             Failed Mars mission
+     -192  THEMIS-B (spacecraft)                           Moon
+     -193  THEMIS-C (spacecraft)                           Moon
+
+      -45  Janus-A (spacecraft)                             Future
+      -72  Janus-B (spacecraft)                             Future
+      -78  DSCOVR (spacecraft)                              Future/Earth lagrange
+
+
